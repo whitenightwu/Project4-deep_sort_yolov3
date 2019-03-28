@@ -37,9 +37,13 @@ def main(yolo,read_type):
     #writeVideo_flag = True
 
     #geneate a video object
-    video_dir='/home/liuyp/liu/mot/deep_sort_yolov3/model_data/demo2.wmv'
-    video=video_open(read_type,video_dir)
-    video_capture = video.generate_video()
+    # video_dir='/home/ydwu/project4/deep_sort_yolov3/output/out.wmv'
+    # video=video_open(read_type,video_dir)
+    # video_capture = video.generate_video()
+
+
+    video_capture = cv2.VideoCapture(0)  # 0 stands for very first webcam attach
+
     fps=0
     while True:
         ret, frame = video_capture.read()  # frame shape 640*480*3

@@ -1,0 +1,23 @@
+
+## C/C++
+*.bin
+*.exe
+
+
+## Python
+*.pyc
+__pycache__
+
+## IDE
+.idea
+
+
+## other
+*tar.gz
+
+## output
+output/
+
+## models
+model_data/
+yolov3.weights
