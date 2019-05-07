@@ -55,6 +55,7 @@ def main(yolo,read_type):
         time3=time.time()
         boxs = yolo.detect_image(image)
         time4=time.time()
+        print('boxs = ', boxs)
         print('detect cost is',time4-time3)
        # print("box_num",len(boxs))
         time3=time.time()
@@ -84,7 +85,9 @@ def main(yolo,read_type):
         for det in detections:
             bbox = det.to_tlbr()
             cv2.rectangle(frame,(int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])),(255,0,0), 2)
-            
+            print(int(bbox[0]))
+            print(int(bbox[1]))
+            print(int(bbox[2]))
         cv2.imshow('', frame)
 
         fps  = ( fps + (1./(time.time()-t1)) ) / 2
