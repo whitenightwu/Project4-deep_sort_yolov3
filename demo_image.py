@@ -46,7 +46,7 @@ def main(yolo,read_type):
 
     plt.figure(figsize=(10, 10))
     plt.imshow(tmp_image)
-    plt.show()
+    # plt.show()
 
     plt.figure(figsize=(10, 10))
     colors = plt.cm.hsv(np.linspace(0, 1, 21)).tolist()

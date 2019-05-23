@@ -17,6 +17,8 @@ from PIL import Image, ImageFont, ImageDraw
 
 from yolo3.model import yolo_eval
 from yolo3.utils import letterbox_image
+from keras.utils import plot_model
+import pydot
 
 class YOLO(object):
     def __init__(self):
@@ -53,7 +55,8 @@ class YOLO(object):
 
         self.yolo_model = load_model(model_path, compile=False)
         print('{} model, anchors, and classes loaded.'.format(model_path))
-
+        plot_model(self.yolo_model, to_file='/home/ydwu/project4/deep_sort_yolov3/model_data/model.png', show_shapes=True, show_layer_names=True)
+        
         # Generate colors for drawing bounding boxes.
         hsv_tuples = [(x / len(self.class_names), 1., 1.)
                       for x in range(len(self.class_names))]
